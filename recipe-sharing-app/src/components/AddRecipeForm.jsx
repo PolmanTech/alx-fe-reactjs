@@ -1,4 +1,7 @@
-import { useState } from 'react';
+
+/* eslint-disable no-unused-vars */
+// AddRecipeForm component
+import React, { useState } from 'react'
 import useRecipeStore from './recipeStore';
 
 const AddRecipeForm = () => {
@@ -14,21 +17,23 @@ const AddRecipeForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='form-container' onSubmit={handleSubmit}>
             <input
-                type="text"
+                className='form-input'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Title"
             />
             <textarea
+            className='form-input'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Description"
             />
-            <button type="submit">Add Recipe</button>
+            <button className='form-submit-btn' type="submit">Add Recipe</button>
         </form>
     );
-};
+}
 
-export default AddRecipeForm;
+export default AddRecipeForm
+
